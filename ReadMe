@@ -1,0 +1,27 @@
+This Code is for Contextual-MCMC algorithm described in "Contextual Symmetries in Probabilistic Graphical Models" Ankit Anand, Aditya Grover, Mausam and Parag Singla. Appeared in Proceedings of IJCAI' 2016. The code is built on base code of orbital-MCMC given by Mathias Niepert for paper "Markov Chain on Orbits of Permutation Groups", Mathias Niepert, UAI'12. We thank Mathias Niepert for providing us base code.
+
+The code directory has 3 sub-directories: 
+1. Source Files: It contains the base source code for various algorithms viz. Vanilla-Gibbs, Orbital-MCMC, Con-MCMC, Con-MCMC(alpha) and code to generate marginals ( This is same as Vanilla-Gibbs but more samples taken). Each file is explained in corresponding directory.
+2. Utils: It includes various utlility files to generate different formats for input to algorithms. Also, Domain code and weights used is specified in Random_Domain_Generator subdirectory.
+3. Domains: It includes two domains along with all results illustrated in IJCAI'16 paper "Contextual Symmetries in Probabilistic Graphical Models" Ankit Anand, Aditya Grover, Mausam and Parag Singla.
+
+A typical process to run any new domain instance. All these steps are already done 
+
+1. Use domain generator file (random_toy2.py for sports and random_f for Y&O) to generate a .mln file.
+2. After obtaining .mln, run dimacs_gen.py (present in Utils) to generate dimacs.cnf and dimacs.cnf.saucy which are used by all orbital based methods. 
+3. After this we run, marginal_gen_gibbs.g to obtain true marginals in file: marginalsfs.g
+4. After this we can run any algorithm: pure_gen_gibbs.g (For Pure Gibbs), orbital_dimacs.g (For Orbital MCMC), orbital_dimacs_context_h2.g (for Con-MCMC(0)) and orbital_dimacs_context_hi_1.g ( for Con-MCMC(alpha))
+
+Notes: 
+
+1. For All Orbital Algorithms: Saucy executable (present in Utils) should be copied to respective directory(Domain Instance). All algorithms assume this is present in present working directory.
+2. For Con-MCMC(Alpha), we have to manually specify , alpha and context in files. We still have no idea how to give command line argument to .g file ( If you get an idea about this, please let us know)
+
+TO BE UPDATED: 
+1.Arguments for each file (Although it is trivial looking at source code to understand arguments, this section will be updated soon)
+2. Domain description as per code.
+
+Credits: If you use any of these source codes, Please cite our paper "Contextual Symmetries in Probabilistic Graphical Models" Ankit Anand, Aditya Grover, Mausam and Parag Singla. Appeared in Proceedings of IJCAI' 2016.
+
+
+

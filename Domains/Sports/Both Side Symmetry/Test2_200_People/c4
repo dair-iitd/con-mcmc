@@ -1,0 +1,6 @@
+There are 2601 random variables.
+Building the hash table for the sampler...done! (0.285 seconds) 
+500
+;updatem( marginals, s ); called from
+<function "unknown">( <arguments> )
+ called from read-eval loop at line 677 of *stdin*
